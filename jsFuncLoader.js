@@ -1,9 +1,11 @@
 var jsFuncLoader        = new Object();
-jsFuncLoader.loadJsFunc = function(func,args,ajaxrtn){
-        if((typeof(window[func]) === 'function')){
+jsFuncLoader.message    = function(arg){
+        console.log(arg);
+}
+jsFuncLoader.loadJsFunc = function(func,args,ajaxrtn){        if((typeof(window[func]) === 'function')){
                 eval(func)(args,ajaxrtn);
         }else{
-                message("error: \'"+func+"\' is not function!");
+                jsFuncLoader.message("error: \'"+func+"\' is not function!");
         }
 }
 jsFuncLoader.load       = function(schedule,offset,args){
