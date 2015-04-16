@@ -1,0 +1,29 @@
+<html>
+	<head>
+<script type="text/javascript" src="jsFuncLoader.js"></script>
+<script>
+	function run1(a){
+		alert("runed run1 function("+a+")");
+	}
+	function run2(b){
+		alert("runed run2 function("+b+")");
+	}
+	var sch=[
+		{
+			'func':function(tmp){
+				alert(tmp);
+			},
+			'args':123
+		},
+		{'func':'run1','args':'abc'},
+		{'func':'run2'}
+	];
+</script>
+	</head>
+	<body>
+		<input type="text" name="arg" id="arg" value="123" >
+		<input type="button" value="normal" onclick="abc(document.getElementById('arg').value)">
+		<input type="button" value="run" onclick="jsFuncLoader.load(sch)">
+	</body>
+</html>
+
